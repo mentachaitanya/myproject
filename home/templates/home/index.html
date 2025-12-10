@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+<div class="text-center" data-aos="fade-up">
+
+    <!-- Animated Image Box -->
+    <div id="hero-animation"></div>
+
+    <h1 class="mt-4 fw-bold">Welcome to My Django App</h1>
+    <p class="lead text-muted">A clean, modern UI with interactive animations</p>
+
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary btn-lg mt-3" href="/todo/">Go to Task Manager</a>
+    {% else %}
+        <a class="btn btn-success btn-lg mt-3" href="/accounts/signup/">Get Started</a>
+    {% endif %}
+</div>
+
+{% endblock %}
